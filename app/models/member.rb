@@ -30,6 +30,12 @@ class Member < ActiveRecord::Base
   validates :password, presence: { on: :create },
     confirmation: { allow_blank: true }
 
+  validates :other_job, length: { maximum: 10}, presence: true, if: :otherjob?
+
+  def otherjob?
+  job == "その他"
+  end
+
   attr_accessor :password, :password_confirmation
 
   def password=(val)
