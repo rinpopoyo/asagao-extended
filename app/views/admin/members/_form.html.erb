@@ -58,6 +58,7 @@
       <br>
       <%= form.radio_button :job, "その他" %>
       <%= form.label "その他" %>
+      <p class="other_job_text"><%= form.text_field :other_job %></p>
     </td>
   </tr>
   <tr>
@@ -93,3 +94,22 @@
 <% unless @member.new_record? %>
 <p>パスワードを変更しないときは、パスワード入力欄を空にしてください。</p>
 <% end %>
+
+
+<script>
+$(function(){
+  $(".other_job_text").hide();
+});
+
+$( 'input[id="member_job_"]:radio' ).change( function() {
+$(".other_job_text").hide("slow");
+});
+
+$( 'input[value="その他"]:radio' ).change( function() {
+$(".other_job_text").show("slow");
+});
+// 参考サイト
+// http://programing-memo.blogspot.jp/2010/10/radio.html
+// http://js.studio-kingdom.com/jquery/effects/hide
+
+</script>

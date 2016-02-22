@@ -21,7 +21,11 @@
   </tr>
   <tr>
     <th>職業</th>
+    <% if @member.job === "その他" %>
+    <td><%= @member.job+"("+@member.other_job+")" %></td>
+    <% else %>
     <td><%= @member.job %></td>
+    <% end %>
   </tr>
   <tr>
     <th>誕生日</th>

@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160221135003) do
     t.datetime "updated_at",                      null: false
     t.string   "hashed_password"
     t.integer  "job"
+    t.string   "other_job"
   end
 
   create_table "votes", force: :cascade do |t|
