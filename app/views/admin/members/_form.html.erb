@@ -39,6 +39,28 @@
     </td>
   </tr>
   <tr>
+    <th><%= form.label "職業" %></th>
+    <td>
+      <%= form.radio_button :job, "会社員・会社役員" %>
+      <%= form.label "会社員・会社役員" %>
+      <br>
+      <%= form.radio_button :job, "自営業・自由業" %>
+      <%= form.label "自営業・自由業" %>
+      <br>
+      <%= form.radio_button :job, "公務員" %>
+      <%= form.label "公務員" %>
+      <br>
+      <%= form.radio_button :job, "学生" %>
+      <%= form.label "学生" %>
+      <br>
+      <%= form.radio_button :job, "無職" %>
+      <%= form.label "無職" %>
+      <br>
+      <%= form.radio_button :job, "その他" %>
+      <%= form.label "その他" %>
+    </td>
+  </tr>
+  <tr>
     <th><%= form.label :birthday, for: "member_birthday_1i" %></th>
     <td><%= form.date_select :birthday,
               start_year: 1940, end_year: Time.now.year,

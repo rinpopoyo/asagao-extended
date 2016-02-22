@@ -1,4 +1,7 @@
 class Member < ActiveRecord::Base
+
+  enum job: { "会社員・会社役員" => 0, "自営業・自由業" => 1, "公務員" => 2, "学生" => 3, "無職" => 4, "その他" => 5 }
+
   include EmailAddressChecker
 
   has_many :entries, dependent: :destroy
